@@ -1,6 +1,6 @@
 #include<iostream>
+using namespace std;
 int main(){
-	std::cout<<"Hello World!";
-	std::cout<<"\n";
-	std::cout<<"CPEDSTRUCL";
+	cout<<"Hello World!\n";
+	cout<<"CPEDSTRUCL";
 }
