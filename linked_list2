@@ -29,9 +29,19 @@ public:
         delete n;
         return ret;
     }
+    
+    void displayValue(){
+    	n = head;
+    	cout << "\n";
+    	while(n!=NULL){
+    		cout << n->x << "\n";
+    		n = n->next;
+		}
+		getch();
+	}
 
 private:
-    Node *head; 
+    Node *head,*n; 
 };
 
 int main() {
@@ -66,7 +76,7 @@ int main() {
 			case 3:
 				exit(1);
 			case 4:
-				
+				list.displayValue();
 				break;
 			default: 
 				cout << "\nWrong input. Try again.";
