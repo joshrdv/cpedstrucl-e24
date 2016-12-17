@@ -59,14 +59,14 @@ int main() {
 					cout << list.popValue() <<" has been popped."<< endl;
 					count--;
 				}
-				else{
+				else
 					cout << "No value to pop."<<endl;
-				}
 				getch();
 				break;
 			case 3:
 				exit(1);
 			case 4:
+				
 				break;
 			default: 
 				cout << "\nWrong input. Try again.";
