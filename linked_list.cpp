@@ -1,11 +1,24 @@
 #include<stdio.h> 
 #include<stdlib.h>
+#include<conio.h>
 
 struct node {
 	int data;
 	struct node * next;
 } *head;
-  
+
+void search(int num) {
+struct node * n;
+  int c = 1;
+  n = head;
+  while (n != NULL) {
+  	if (n -> data == num)
+      printf("Found %d at position %d\n", num,c);
+    n = n -> next;
+    c++;
+  }
+}
+
 int count() {
   struct node * n;
   int c = 0;
@@ -72,7 +85,8 @@ int ddelete(int num) {
         free(temp);
         return 1;
       }
-    } else {
+    } 
+	else {
       prev = temp;
       temp = temp -> next;
     }
@@ -88,7 +102,7 @@ void insert(int num) {
     add(num);
   } else {
     while (temp != NULL) {
-      if (temp -> data < num)
+//      if (temp -> data < num)
         c++;
       temp = temp -> next;
     }
@@ -120,22 +134,24 @@ int main() {
   struct node * n;
   head = NULL;
   while (1) {
+  	system("cls");
     printf("Linked List Operations\n");
     printf("===============\n");
     printf("1.Insert\n");
     printf("2.Display\n");
     printf("3.Size\n");
     printf("4.Delete\n");
-    printf("5.Exit\n");
+    printf("5.Search\n");
+    printf("6.Exit\n");
     printf("Enter your choice : ");
-    if (scanf("%d", & i) <= 0) {
+    if (scanf("%d", &i) <= 0) {
       printf("Enter only an Integer\n");
       exit(0);
     } else {
       switch (i) {
       case 1:
         printf("Enter the number to insert : ");
-        scanf("%d", & num);
+        scanf("%d", &num);
         insert(num);
         break;
       case 2:
@@ -145,23 +161,32 @@ int main() {
           printf("Element(s) in the list are : ");
         }
         display(n);
+        getch();
         break;
       case 3:
         printf("Size of the list is %d\n", count());
+        getch();
         break;
       case 4:
         if (head == NULL)
           printf("List is Empty\n");
         else {
           printf("Enter the number to delete : ");
-          scanf("%d", & num);
+          scanf("%d", &num);
           if (ddelete(num))
             printf("%d deleted successfully\n", num);
           else
             printf("%d not found in the list\n", num);
         }
+        getch();
         break;
       case 5:
+      	printf("Enter the number to search: ");
+      	scanf("%d", &num);
+      	search(num);
+      	getch();
+      	break;
+      case 6:	
         return 0;
       default:
         printf("Invalid option\n");
