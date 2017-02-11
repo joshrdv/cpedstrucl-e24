@@ -16,7 +16,6 @@ struct Tree *newTreeNode(int data) {
 struct Tree* insertTreeNode(struct Tree *node, int data){
 	static Tree *p;
 	Tree *retNode;
-
 	if(node == NULL)  {
 	    retNode = newTreeNode(data);
 	    retNode->parent = p;
