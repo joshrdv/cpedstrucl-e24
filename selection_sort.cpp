@@ -4,13 +4,17 @@ using namespace std;
 
 int main(){
 	int A1[5]={30,40,20,50,10};
+	int p,q;
 	cout<<"SELECTION SORTING:\n";
 	for(int i=0;i<4;i++){
 		int min=A1[i], index=i;
 		for(int j=i+1;j<5;j++){
 			if(A1[j]< min){
+				p=min;
 				min = A1[j];
+				q=A1[j];
 				index = j;
+				cout<<"Swapped: "<<p<<", "<<q<<"\n";
 			}
 		}
 		A1[index] = A1[i];
