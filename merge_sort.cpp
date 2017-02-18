@@ -5,8 +5,8 @@ using namespace std;
 int main(){
 	int numArr[8]={6,5,3,1,8,7,2,4};
 	int temp[8];
-	int n=8, l1, k, h1, l2, h2, i, j;
-	cout<<"MERGE SORTING:\n";
+	int n=8, l1, k, h1, l2, h2, i, j, count=1;
+	cout<<"MERGE SORTING:\nOriginal:\n";
 	for(int l=0;l<n;l++)
 		cout<<numArr[l]<<" ";
 	cout<<"\n\n";	
@@ -41,9 +41,11 @@ int main(){
 			temp[k++]=numArr[i];
 		for(i=0;i<n;i++)
 			numArr[i]=temp[i];	
-				
+		
+		cout<<"Pass "<<count<<":\n";		
 		for(int l=0;l<n;l++)
 			cout<<numArr[l]<<" ";
-		cout<<"\n\n";			
+		cout<<"\n\n";
+		count++;			
 	}
 }
