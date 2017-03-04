@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include <cstdio>
 #include <sstream>
 #include <algorithm>
@@ -44,6 +45,7 @@ int main(){
 	//8 30 35 5 7
 	//ino 8 5 7 30 35
 	while(1){
+		system("cls");
 		cout << "---------------------"<<endl;
 		cout << "AVL Tree Implementation"<<endl;
 		cout << "---------------------"<<endl;
@@ -78,16 +80,19 @@ int main(){
 				cout << "Inorder Traversal: " <<endl;
 				avl.inorder(root);
 				cout << endl;
+				getch();
 				break;
 			case 4: 
 				cout << "Preorder Traversal: "<<endl;		
 				avl.preorder(root);
 				cout << endl;
+				getch();
 				break;
 			case 5:
 				cout << "Postorder Traversal: "<<endl;
 				avl.postorder(root);
 				cout<<endl;
+				getch();
 				break;
 			case 6:
 				exit(1);
@@ -161,18 +166,6 @@ avl_node *avlTree::insert(avl_node *root, int value){
 		root = new avl_node;
 		root-> data = value;
 		root-> left = NULL;
-		root-> right = NULL;
-		return root;
-	}
-	else if(value<root->data){
-		root->left = insert(root->left,value);
-//		root = balance(root);
-	}
-	else if(value >= root->data){
-		root->right = insert(root->right, value);
-//		root = balance(root);
-	}
-	return root;
 }
 void avlTree::display(avl_node *ptr, int level){
 	int i;
@@ -209,3 +202,15 @@ void avlTree::postorder(avl_node *tree){
 	postorder(tree->right);	
 	cout << tree->data <<"  ";
 }
+		root-> right = NULL;
+		return root;
+	}
+	else if(value<root->data){
+		root->left = insert(root->left,value);
+//		root = balance(root);
+	}
+	else if(value >= root->data){
+		root->right = insert(root->right, value);
+//		root = balance(root);
+	}
+	return root;
